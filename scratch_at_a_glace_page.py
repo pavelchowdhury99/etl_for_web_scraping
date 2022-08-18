@@ -1,7 +1,4 @@
-from requests_html import HTMLSession
-from bs4 import BeautifulSoup
-
-session = HTMLSession()
+import requests
 import re
 
 cookies = {
@@ -26,12 +23,9 @@ headers = {
 }
 
 data = '{\'TollName\':\'\'}'
-resp = session.post('https://tis.nhai.gov.in/TollPlazaService.asmx/GetTollPlazaInfoGrid',
-                    cookies=cookies,
-                    headers=headers,
-                    data=data)
 
-l = re.findall('javascript:TollPlazaPopup\(\d+\)',resp.text)
+response = requests.post('https://tis.nhai.gov.in/TollPlazaService.asmx/GetTollPlazaInfoGrid', cookies=cookies, headers=headers, data=data)
+
+l = re.findall('javascript:TollPlazaPopup\(\d+\)',response.text)
 ids = [int(re.findall('\d+',str_)[0]) for str_ in l]
 print(ids)
-print(len(ids))
