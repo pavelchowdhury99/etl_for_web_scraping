@@ -37,6 +37,3 @@ Once we have the list of all such pages we shall use multithreading and scale up
 5. [re module preliminary](https://www.w3schools.com/python/python_regex.asp)
 6. [re module official documentation](https://docs.python.org/3/library/re.html)
 7. [curl to code converter](https://curlconverter.com/)
-
-## Walkthrough
-[![Webscraping ETL Pipeline in Python](https://yt-embed.herokuapp.com/embed?v=juMlqaPUgRo)](https://youtu.be/juMlqaPUgRo "Webscraping ETL Pipeline in Python")
